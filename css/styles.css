@@ -1,0 +1,1142 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    scroll-padding-top: 95px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ============================= */
+/* NAVBAR STYLING - NO EXTRA SPACING */
+/* ============================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #00008b, #6a11cb);
+    color: white;
+    padding: 0 15px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: 90px; /* Fixed Height */
+    width: 100%;
+}
+
+/* ============================= */
+/* LOGO STYLING - COMPACT */
+/* ============================= */
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.navbar .logo img {
+    height: 80px; /* Adjusted for 90px navbar */
+    width: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #00008b, #28a745);
+    padding: 3px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+}
+
+.navbar .logo p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* ============================= */
+/* NAVBAR LINKS (DESKTOP VIEW) */
+/* ============================= */
+.navbar nav {
+    display: flex;
+    align-items: center;
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar nav ul li {
+    margin: 0;
+}
+
+/* Navbar Links */
+.navbar nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 18px;
+    display: block;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.navbar nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+}
+
+/* ============================= */
+/* HAMBURGER MENU (MOBILE VIEW) */
+/* ============================= */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    color: white;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Rotate effect when menu is open */
+.menu-toggle.active {
+    transform: rotate(90deg);
+}
+
+/* ============================= */
+/* RESPONSIVE NAVBAR (MOBILE VIEW) */
+/* ============================= */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar {
+        height: 90px; /* Fixed height for mobile */
+        padding: 0 15px;
+    }
+
+    .navbar .logo img {
+        height: 70px;
+        width: 70px;
+    }
+
+    /* Mobile Menu - Left Aligned */
+    .navbar nav {
+        display: none;
+        flex-direction: column;
+        background: linear-gradient(to right, #00008b, #6a11cb);
+        position: absolute;
+        top: 90px; /* Opens directly below navbar */
+        right: 0; /* Aligns to the left */
+        width: 70%; /* Covers 70% of screen width */
+        padding: 10px 0;
+        box-shadow: 3px 0 5px rgba(0, 0, 0, 0.2);
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    /* Show navbar when active */
+    .navbar nav.active {
+        display: flex;
+    }
+
+    .navbar nav ul {
+        flex-direction: column;
+        align-items: flex-start; /* Aligns text to the left */
+        width: 100%;
+        padding-left: 15px;
+    }
+
+    .navbar nav ul li {
+        width: 100%;
+    }
+
+    .navbar nav ul li a {
+        padding: 12px;
+        width: 100%;
+        text-align: left; /* Ensures left alignment */
+    }
+
+    /* Hover effect for mobile menu */
+    .navbar nav ul li a:hover {
+        background: rgba(255, 255, 255, 0.2);
+    }
+}
+
+/* Conference Title Section */
+.conference-title {
+    margin-top: 90px; /* Offset for fixed navbar */
+    background: linear-gradient(to right, #6a11cb, #00008b);
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.conference-header {
+    display: flex;
+    justify-content: space-between; /* Spread items across the row */
+    align-items: center; /* Center items vertically */
+    gap: 1rem; /* Add spacing between items */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.logo-image {
+    width: 250px; /* Adjust size for the logo */
+    height: auto;
+}
+.logo-image-container {
+    background:white; /* Gradient background (golden to orange) */
+    padding: 0.5rem; /* Add padding inside the container */
+    border-radius: 8px; /* Optional rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Optional shadow for a polished look */
+}
+
+.conference-title-text {
+    font-size: 1.8rem;
+    line-height: 1.4;
+    text-align: center;
+    flex: 1; /* Take up remaining space to center-align */
+}
+.conference-title-text span {
+    background: linear-gradient(to right, goldenrod, yellow); /* Gradient from golden to yellow */
+    -webkit-background-clip: text; /* Clip the gradient to the text */
+    -webkit-text-fill-color: transparent; /* Make the text transparent to show the gradient */
+    font-size: 1.9rem; /* Smaller font size */
+    font-weight: bold; /* Optional: Make the text bold */
+    display: inline-block; /* Ensure the gradient is applied properly */
+    margin-top: 0.5rem; /* Optional: Add spacing above the span */
+}
+
+.building-image {
+    width: 250px; /* Adjust size for the building */
+    height: auto;
+    border-radius: 8px; /* Optional: Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Optional shadow */
+}
+
+@media (max-width: 768px) {
+    .conference-header {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center items */
+        text-align: center; /* Center-align text */
+    }
+
+    .logo-image,
+    .building-image {
+        display: block; /* Ensure block-level display */
+        width: 100%!important; /* Make images span full width */
+        max-width: 100%; /* Prevent overflow */
+        height: auto!important; /* Maintain aspect ratio */
+    }
+
+    .conference-title-text {
+        margin: 1rem 0; /* Add spacing around the title */
+        padding: 0 1rem; /* Add some padding for better readability */
+    }
+}
+
+/* Announcement Section */
+#announcement {
+    position: relative;
+    color: #e0e0e0; /* Light gray text for contrast */
+    margin: 0 auto; /* Center the section */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 0; /* Remove border-radius for full width */
+    padding: 0 0; /* Adjust padding for better alignment */
+    width: 100%; /* Full width on desktop */
+    max-width: 100%; /* Prevent accidental overflows */
+}
+
+
+.announcement-ticker {
+    position: relative;
+    overflow: hidden;
+    height: 3rem; /* Increased height for desktop */
+    background: linear-gradient(135deg, #00008b, #8e44ad); /* Light blue to purple gradient */
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 0 1rem;
+}
+
+.ticker-wrapper {
+    display: inline-block;
+    white-space: nowrap;
+    animation: ticker-scroll 30s linear infinite;
+}
+
+.ticker-content p {
+    display: inline;
+    margin: 0 2rem;
+    color: #ffffff; /* White text for contrast against the gradient */
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.ticker-content p:hover {
+    color: #ff8c00; /* Orange for hover effect */
+}
+
+@keyframes ticker-scroll {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+    #announcement {
+        font-size: 1.1rem;
+        padding: 0 0;
+    }
+
+    .announcement-ticker {
+        height: 3.5rem; /* Slightly taller for touch devices */
+    }
+
+    .ticker-content p {
+        margin: 0 1rem;
+    }
+}
+
+/* Hero and About Section Container */
+.hero-about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Ensures both sections stretch to the same height */
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero,
+#about {
+    flex: 1; /* Equal width for both sections */
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex; /* Enable flex layout */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: space-between; /* Align content properly */
+}
+
+.hero h2,
+#about h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.hero p,
+#about p {
+    text-align: justify;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.hero {
+    background: linear-gradient(135deg, #e0f7fa, #f1f8e9); /* Light blue-green gradient */
+}
+
+.hero h2 {
+    color: #006064; /* Teal for the hero section heading */
+}
+
+#about {
+    background: linear-gradient(135deg, #ffffff, #e8eaf6); /* Subtle white-blue gradient */
+}
+
+#about h2 {
+    color: #283593; /* Indigo for the about section heading */
+}
+
+/* Ensure both sections have the same height */
+.hero,
+#about {
+    min-height: 300px; /* Set the minimum height */
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .hero-about-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .hero,
+    #about {
+        flex: none;
+        width: 100%;
+        min-height: auto; /* Remove fixed height for stacked layout */
+    }
+}
+
+/* Committee Section Container */
+.committee-section-header {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(to right, #3f51b5, #7e57c2); /* Blue to purple gradient */
+    color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    margin: 2rem auto;
+    max-width: 85%; /* Limit the width for better alignment */
+}
+
+.committee-section-header h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.committee-section {
+    display: block;
+    margin: 1.5rem auto;
+    padding: 2rem;
+    background: linear-gradient(to bottom, #e3f2fd, #ede7f6);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    max-width: 85%;
+    text-align: center;
+}
+
+.committee-section h2 {
+    font-size: 1.8rem;
+    color: #37474f;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+/* Member Blocks */
+.committee-section .members-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    justify-content: center;
+    padding: 0 1rem;
+}
+
+.committee-section .member {
+    text-align: center;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    margin: 0 auto;
+    width: 235px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.committee-section .member h3 {
+    font-size: 1.2rem;
+    color: #1a237e;
+    margin: 0.5rem 0;
+}
+
+.committee-section .member .highlight {
+    color: #d32f2f;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.committee-section .member p {
+    font-size: 0.9rem;
+    color: #616161;
+    margin: 0.5rem 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .committee-section-header,
+    .committee-section {
+        width: 95%;
+        margin: 1rem auto;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .committee-section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .committee-section .members-container {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        padding: 0;
+    }
+
+    .committee-section .member {
+        width: 100%;
+        padding: 1rem;
+        border-radius: 8px;
+    }
+
+    .committee-section .member h3 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .committee-section .member p {
+        font-size: 0.85rem;
+        margin: 0.25rem 0;
+    }
+}
+
+/* Desktop-Specific Styles */
+@media (min-width: 1024px) {
+    .committee-section .member {
+        width: 235px;
+        height: 200px;
+    }
+}
+
+
+/* ============================= */
+/* CONFERENCE TRACKS SECTION */
+/* ============================= */
+.conference-tracks {
+        text-align: center;
+    padding: 2rem;
+    background: linear-gradient(to right, #3f51b5, #7e57c2); /* Blue to purple gradient */
+    color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    margin: 2rem auto;
+    max-width: 85%; /* Limit the width for better alignment */
+}
+
+/* Section Title */
+.conference-section-title {
+    font-size: 2.2rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Section Description */
+.conference-section-description {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    color: #E7E7E7;
+}
+
+/* ============================= */
+/* TRACKS GRID CONTAINER */
+/* ============================= */
+.tracks-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ============================= */
+/* INDIVIDUAL TRACK CARD */
+/* ============================= */
+.track-card {
+    background: white; /* White background inside cards */
+    color: #333;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    text-align: left;
+    flex: 1 1 calc(50% - 20px); /* Two columns on larger screens */
+    max-width: 500px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.track-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Track Title */
+.track-card h3 {
+    font-size: 1.5rem;
+    color: #4A00E0;
+    margin-bottom: 10px;
+}
+
+/* Track Description */
+.track-card p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* ============================= */
+/* TRACK CHAIR */
+/* ============================= */
+.track-chair {
+    font-size: 1rem;
+    color: #444;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* ============================= */
+/* SUBMIT ARTICLE BUTTON */
+/* ============================= */
+.submit-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #4A00E0; /* Deep Blue */
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 12px 25px;
+    border-radius: 5px;
+    margin: 20px auto 0 auto; /* Centers the button */
+    width: 180px; /* Set fixed width */
+    height: 45px; /* Set fixed height */
+    text-align: center;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.submit-button:hover {
+    background: #8E2DE2; /* Purple Hover Effect */
+    transform: scale(1.05);
+}
+
+/* ============================= */
+/* RESPONSIVE DESIGN */
+/* ============================= */
+@media (max-width: 1024px) {
+    .conference-tracks {
+        padding: 50px 5%;
+    }
+    
+    .track-card {
+        flex: 1 1 calc(100% - 20px); /* Single column on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .conference-tracks {
+        padding: 40px 3%;
+    }
+
+    .tracks-container {
+        flex-direction: column;
+    }
+
+    .track-card {
+        padding: 20px;
+    }
+
+    .track-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .track-card p {
+        font-size: 1rem;
+    }
+
+    .submit-button {
+        width: 100%; /* Full-width button on mobile */
+    }
+}
+
+
+
+
+/* Speakers Section */
+/* Featured Speakers Section */
+.speakers {
+    padding: 2rem;
+    text-align: center;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    margin: 2rem auto;
+    max-width: 1100px;
+}
+
+/* Section Title */
+.section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #00008b;
+    margin-bottom: 1.5rem;
+}
+
+.section-title .highlight {
+    color: #d32f2f;
+}
+
+/* Speakers Container */
+.speakers-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+/* Speaker Card */
+.speaker-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 280px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.speaker-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Speaker Image */
+.speaker-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #00008b;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Speaker Name */
+.speaker-card h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-top: 1rem;
+}
+
+/* Speaker Institution */
+.speaker-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .speakers-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .speaker-card {
+        width: 90%;
+    }
+}
+
+/* Author Instructions Section */
+.instruction {
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    margin: 2rem auto;
+    max-width: 900px; /* Ensures a well-aligned centered layout */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centers all text */
+}
+
+/* Section Title Styling */
+.author-section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #00008b; /* Matches website theme */
+    text-align: center;
+}
+
+.author-section-title .highlight {
+    color: #d32f2f; /* Highlight color */
+}
+
+/* Subheading Styling */
+.subheading {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: bold;
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+/* Criteria Section */
+.criteria-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Individual Criteria Card */
+.criteria-card {
+    background: linear-gradient(135deg, #f8f9fa, #e3f2fd); /* Light gradient */
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: center;
+    width: 230px;
+    position: relative;
+    overflow: hidden;
+    border-top: 4px solid #00008b;
+}
+
+/* Hover Effect */
+.criteria-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+/* Icons */
+.criteria-card .icon {
+    background: #00008b;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin: 0 auto 0.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.criteria-card:hover .icon {
+    transform: scale(1.1);
+}
+
+/* Criteria Title */
+.criteria-card h4 {
+    font-size: 1.2rem;
+    color: #00008b;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+/* Criteria Text */
+.criteria-card p {
+    font-size: 1rem;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .criteria-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .criteria-card {
+        width: 90%;
+    }
+}
+
+
+
+/* Notice Box */
+.notice {
+    background: #fffae6;
+    padding: 1rem;
+    border-left: 5px solid #ff9800;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #555;
+    margin-top: 1.5rem;
+    display: inline-block; /* Keeps centered */
+}
+/* Paper Structure Section */
+.paper-structure {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Individual Paper Structure Boxes */
+.structure-box {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: center;
+    border-left: 5px solid #00008b; /* Adds a left border for a stylish effect */
+}
+
+/* Hover Effect */
+.structure-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Paper Structure Titles */
+.structure-box h4 {
+    font-size: 1.3rem;
+    color: #00008b;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+/* Paper Structure Text */
+.structure-box p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .paper-structure {
+        grid-template-columns: 1fr; /* Stacks boxes on smaller screens */
+    }
+}
+
+/* Download Buttons */
+.download-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+    justify-content: center;
+}
+
+.download-buttons a {
+    flex: 1 1 auto;
+    text-align: center;
+    background: #00008b;
+    color: white;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.download-buttons a:hover {
+    background: #6a11cb;
+}
+
+
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .instruction {
+        padding: 1.5rem;
+    }
+    
+    .download-buttons {
+        flex-direction: column;
+    }
+    
+    .download-buttons a {
+        flex: 1 1 100%;
+    }
+}
+
+
+
+/* Important Dates Section */
+.important-dates {
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    margin: 2rem auto;
+    max-width: 900px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Section Title Styling */
+.dates-section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #00008b;
+    text-align: center;
+}
+
+.dates-section-title .highlight {
+    color: #d32f2f;
+}
+
+/* Dates List */
+.dates-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.date-item {
+    background: #ffffff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.date-item h3 {
+    color: #d32f2f;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+
+
+/* Contact Section */
+.contact {
+    padding: 2rem;
+    background: #f8f9fa;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 1100px;
+    margin: 2rem auto;
+}
+
+/* Section Title */
+.contact-section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #00008b;
+    margin-bottom: 1.5rem;
+}
+
+.contact-section-title .highlight {
+    color: #d32f2f;
+}
+/* Contact Container for Google Map and Logo */
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Google Map */
+.contact-map {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* ICAISDT Logo */
+.contact-logo {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-logo img {
+    max-width: 100%;
+    height: auto;
+	 margin-right: 0.5rem;
+    border-radius: 50%; /* Makes the image circular */
+    padding: 5px; /* Space between border and image */
+    background: linear-gradient(135deg, #00008b, #28a745); /* Gradient border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-logo img {
+        max-width: 180px;
+    }
+}
+/* Google Map Container */
+.contact-map-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+/* Map Card Styling */
+.map-card {
+    background: linear-gradient(135deg, #f8f9fa, #e3f2fd); /* Subtle gradient */
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 40vw; /* Makes the map 70% of the window width */
+    max-width: 1200px;
+    overflow: hidden;
+    border-top: 4px solid #00008b; /* Adds a stylish top border */
+}
+
+/* Map Title */
+.map-card h3 {
+    font-size: 1.5rem;
+    color: #00008b;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .map-card {
+        width: 65vw; /* Increase width for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-map-container {
+        padding: 1rem;
+    }
+
+    .map-card {
+        width: 90vw; /* Full width on mobile */
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background: #00008b;
+    color: white;
+    padding: 1rem;
+    margin-top: 2rem;
+}
