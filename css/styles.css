@@ -41,10 +41,10 @@ html, body {
 }
 
 .navbar .logo img {
-    height: 80px; /* Adjusted for 90px navbar */
+     /* Adjusted for 90px navbar */
     width: 80px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #00008b, #28a745);
+    
+    
     padding: 3px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     object-fit: cover;
